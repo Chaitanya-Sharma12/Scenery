@@ -3,16 +3,15 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /
-    
+  - source: scripts/
+    destination: /deployment-archive/scripts/
+
 hooks:
   BeforeInstall:
-    - location: /scripts/before_install.sh
+    - location: /deployment-archive/scripts/before_install.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /scripts/application_start.sh
+    - location: /deployment-archive/scripts/application_start.sh
       timeout: 300
       runas: root
-    
